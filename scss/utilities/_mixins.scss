@@ -1,0 +1,37 @@
+@mixin flex($dir, $wrap, $just, $align:null) {
+    @content;
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+@mixin size($height, $width) {
+    @content;
+    height: $height;
+    width: $width;
+}
+@mixin absoluteCenter() {
+    @content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin card($height, $width, $card-bg, $b-radius, $b-shadow:null, $card-border:null) {
+    @content;
+    height: $height;
+    width: $width;
+    background: $card-bg;
+    border-radius: $b-radius;
+    box-shadow: $b-shadow;
+    border: $card-border;
+}
+@mixin imgOpt() {
+    @content;
+    image-rendering: -webkit-optimize-contrast;
+}
+@mixin imgPixel() {
+    @content;
+    image-rendering: pixelated;
+}
