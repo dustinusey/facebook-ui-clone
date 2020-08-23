@@ -1,0 +1,9 @@
+nav {
+    @include size(50px, 100%);
+    @include flex(row, nowrap, space-between, center);
+    position: fixed;
+    top: 0;
+    background: var(--nav-bg);
+    box-shadow: $bs-light;
+    z-index: 10;
+}

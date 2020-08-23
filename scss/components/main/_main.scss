@@ -1,0 +1,4 @@
+main {
+    background: var(--main-bg);
+    @include size(1000px, 100%);
+}

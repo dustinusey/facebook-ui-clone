@@ -20,20 +20,59 @@ a {
 /* -- scrollbar stylings --*/ 
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 4px;
   }
   
   ::-webkit-scrollbar-track {
-    background: rgba(59, 59, 59, 0.1);
+    background: rgb(46, 55, 61);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #212630;
+    background: #d1d1d1;
     border-radius: 20px;
     border: 1px solid rgba(204, 204, 204, 0.247);
   }
 
-  body {
-      
+  .dot  {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      border-radius: 50%;
+      @include size(20px, 20px);
+      background: rgb(0, 0, 0);
+      z-index: 12;
+      cursor: pointer;
   }
-  
+  body {
+      background: $bg;
+      height: 100%;
+
+      --nav-bg: #FFFFFF;
+      --header-bg: #FFFFFF;
+      --main-bg: #E6EBF0;
+      --text: #000000;
+      --gray-light: #686D73;
+      --gray-dark: #2F3436;
+      --button-bg: #E0E0E0;
+      --input-bg: #ECECEC;
+      --card-bg: #ffffff;
+      --link-blue: #2C82FF; 
+
+  }
+
+  body.dark {
+    --nav-bg: #2F3740;
+    --header-bg: #333C46;
+    --main-bg: #2F3740;
+    --text: #FFFFFF;
+    --button-bg: rgba(#FFFFFF, .22);
+    --input-bg: rgba(#ECECEC, .27);
+    --card-bg: #2F3740;
+  }
+
+
+  //container 
+  header, main {
+      max-width: 950px;
+      margin: 0 auto;
+  }
