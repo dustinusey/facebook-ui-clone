@@ -3414,40 +3414,48 @@ a {
 }
 
 .dot {
-  position: absolute;
+  position: fixed;
   top: 70px;
   right: 20px;
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  background: black;
+  background: #32373f;
   z-index: 12;
   cursor: pointer;
 }
 
 body {
-  background: #438B9B;
-  height: 100%;
+  --page-bg: #d5dadb;
   --nav-bg: #FFFFFF;
   --header-bg: #FFFFFF;
   --main-bg: #E6EBF0;
   --text: #000000;
   --gray-light: #686D73;
-  --gray-dark: #2F3436;
+  --gray-dark: #3e4346;
   --button-bg: #E0E0E0;
   --input-bg: #ECECEC;
   --card-bg: #ffffff;
   --link-blue: #2C82FF;
+  --fb-blue: #4393F4;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: "Roboto", sans-serif;
 }
 
 body.dark {
+  --page-bg: #4a5661;
   --nav-bg: #2F3740;
   --header-bg: #333C46;
   --main-bg: #2F3740;
   --text: #FFFFFF;
-  --button-bg: rgba(#FFFFFF, .22);
-  --input-bg: rgba(#ECECEC, .27);
+  --button-bg: #ffffff33;
+  --input-bg: #ececec17;
   --card-bg: #2F3740;
+}
+
+body, nav, header, main {
+  transition: background 0.5s;
 }
 
 header, main {
@@ -3468,6 +3476,156 @@ nav {
   background: var(--nav-bg);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   z-index: 10;
+  padding: 2px 20px;
+}
+
+.logo-and-search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.logo-and-search .logo-div {
+  background: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  margin-right: 8px;
+}
+.logo-and-search svg {
+  width: 100%;
+  transform: scale(1.1);
+  color: var(--fb-blue);
+}
+.logo-and-search input {
+  height: 35px;
+  width: 35px;
+  transform: scale(1.1);
+  border-radius: 25px;
+  border: none;
+  background-image: url(../images/svg/search-solid.svg);
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  background-color: var(--input-bg);
+  transition: background 0.5s, width 0.3s;
+  padding: 5px 5px 5px 35px;
+}
+.logo-and-search input::placeholder {
+  opacity: 0;
+  transition: 0.5s;
+  font-size: 14px;
+  color: var(--gray-light);
+}
+
+.dark nav input::placeholder {
+  color: #dadada;
+}
+
+@media (min-width: 1000px) {
+  .logo-and-search input {
+    margin-left: 15px;
+    width: 200px;
+    background-size: 15px;
+    background-position: 10px;
+  }
+  .logo-and-search input::placeholder {
+    opacity: 1;
+  }
+}
+.activity-links {
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.activity-links li {
+  margin: 0 3px;
+  height: 95%;
+  width: 45px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: color 0.5s, background 0.2s;
+  cursor: pointer;
+}
+.activity-links li:hover {
+  background: var(--button-bg);
+}
+.activity-links svg {
+  color: var(--gray-dark);
+  width: 100%;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.dark nav .activity-links svg {
+  color: white;
+}
+
+@media (min-width: 600px) {
+  .activity-links {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  .activity-links li {
+    margin: 0 15px;
+  }
+}
+.personal-nav {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.personal-nav li {
+  margin: 0 3px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  transition: color 0.5s, background 0.2s;
+  cursor: pointer;
+  background: var(--button-bg);
+}
+.personal-nav li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.personal-nav svg {
+  color: var(--gray-dark);
+  width: 85%;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.personal-nav .caret svg {
+  width: 70%;
+}
+
+.dark nav .personal-nav svg {
+  color: white;
+}
+
+.dark nav .personal-nav li:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 header {

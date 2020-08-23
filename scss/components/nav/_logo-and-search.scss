@@ -1,0 +1,52 @@
+.logo-and-search {
+    @include flex(row, nowrap, center, center);
+    & .logo-div {
+        background: white;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        position: relative;
+        margin-right: 8px;
+    }
+    & svg {
+        width: 100%;
+        transform: scale(1.1);
+        color: var(--fb-blue);
+    }
+    & input {
+        @include size(35px, 35px);
+        transform: scale(1.1);
+        border-radius: 25px;
+        border: none;
+        background-image: url(../images/svg/search-solid.svg);
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        background-color: var(--input-bg);
+        transition: background .5s, width .3s;
+        padding: 5px 5px 5px 35px;
+            &::placeholder {
+                opacity: 0;
+                transition: .5s;
+                font-size: 14px;
+                color: var(--gray-light);
+            }
+    }
+}
+
+.dark nav input::placeholder {
+    color: rgb(218, 218, 218);
+}
+
+@media(min-width: 1000px) {
+    .logo-and-search input {
+        margin-left: 15px;
+        width: 200px;
+        background-size: 15px;
+        background-position: 10px;
+            &::placeholder {
+                opacity: 1;
+            }
+    }
+}

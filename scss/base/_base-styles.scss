@@ -34,44 +34,52 @@ a {
   }
 
   .dot  {
-      position: absolute;
+      position: fixed;
       top: 70px;
       right: 20px;
       border-radius: 50%;
       @include size(20px, 20px);
-      background: rgb(0, 0, 0);
+      background: rgb(50, 55, 63);
       z-index: 12;
       cursor: pointer;
   }
   body {
-      background: $bg;
-      height: 100%;
-
+      
+      --page-bg: #d5dadb;
       --nav-bg: #FFFFFF;
       --header-bg: #FFFFFF;
       --main-bg: #E6EBF0;
       --text: #000000;
       --gray-light: #686D73;
-      --gray-dark: #2F3436;
+      --gray-dark: #3e4346;
       --button-bg: #E0E0E0;
       --input-bg: #ECECEC;
       --card-bg: #ffffff;
       --link-blue: #2C82FF; 
+      --fb-blue: #4393F4;
+
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: 'Roboto', sans-serif;
 
   }
 
   body.dark {
+    --page-bg: #4a5661;
     --nav-bg: #2F3740;
     --header-bg: #333C46;
     --main-bg: #2F3740;
     --text: #FFFFFF;
-    --button-bg: rgba(#FFFFFF, .22);
-    --input-bg: rgba(#ECECEC, .27);
+    --button-bg: #ffffff33;
+    --input-bg: #ececec17;
     --card-bg: #2F3740;
   }
 
 
   //container 
+  body, nav, header, main {
+      transition: background .5s;
+  }
   header, main {
       max-width: 950px;
       margin: 0 auto;

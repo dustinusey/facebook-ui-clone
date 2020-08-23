@@ -1,0 +1,35 @@
+.personal-nav {
+    height: 100%;
+    @include flex(row, nowrap, center, center);
+        & li {
+            margin: 0 3px;
+            @include size(40px, 40px);
+            @include flex(row, nowrap, center, center);
+            padding: 10px;
+            border-radius: 50%;
+            transition: color .5s, background .2s;
+            cursor: pointer;
+            background: var(--button-bg);
+                &:hover {
+                    background: rgba(0, 0, 0, 0.2);
+                }
+        }
+        & svg {
+            color:var(--gray-dark);
+            width: 85%;
+            transition: .5s;
+            pointer-events: none;
+        }
+        & .caret svg {
+            width: 70%;
+        }
+
+        
+}
+
+.dark nav .personal-nav svg {
+    color: white;
+}
+.dark nav .personal-nav li:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
