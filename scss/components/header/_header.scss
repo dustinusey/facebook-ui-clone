@@ -1,5 +1,6 @@
 header {
     background: var(--header-bg);
-    @include size(500px, 100%);
+    @include size(auto, 100%);
+    @include flex(column, nowrap, flex-start, center);
     margin-top: 50px;
 }

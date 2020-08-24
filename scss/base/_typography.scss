@@ -1,0 +1,9 @@
+.link-span {
+    color: var(--link-blue);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+p, h1, h2, h3, h4, h5 {
+    transition: color .5s;
+}

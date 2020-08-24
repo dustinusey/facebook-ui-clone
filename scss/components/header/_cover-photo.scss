@@ -1,0 +1,83 @@
+.cover-photo-div {
+    @include size(300px, 100%);
+    @include flex(row, nowrap, flex-end, flex-end);
+    max-width: 900px;
+    background: url(../images/cover/cover1.JPG);
+    background-position: center;
+    background-size: cover;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    padding: 15px;
+        & .user-photo {
+            @include size(150px, 150px);
+            background: red;
+            border-radius: 50%;
+            @include absoluteCenter;
+            top: 80%;
+            overflow: hidden;
+            border: 2px solid white;
+                & img {
+                    width: 100%;
+                    cursor: pointer;
+                }
+        }
+        & .change-photo-toggle {
+            @include size(35px, 35px);
+            @include flex(row, nowrap, center, center);
+            display: none;
+            background: rgb(209, 209, 209);
+            border-radius: 50%;
+            @include absoluteCenter;
+            top: 98%;
+            left: 500px;
+            cursor: pointer;
+                & svg {
+                    pointer-events: none;
+                    margin-bottom: 2px;
+                    margin-left: 1px;
+                    width: 18px;
+                    color: var(--gray-dark);
+                }
+        }
+        & button {
+            display: none;
+            font-size: 14px;
+            padding: 8px;
+                & i {
+                    margin-right: 12px;
+                    font-size: 16px;
+                    color: var(--gray-dark);
+                }
+        }
+}
+
+.header-info-section {
+    margin: 40px auto;
+        & h1 {
+            font-size: 35px;
+            font-weight: 400;
+            margin: 0;
+        }
+        P {
+            margin: 10px auto;
+            text-align: center;
+            font-size: 15px;
+        }
+
+}
+
+.dark .cover-photo-div button {
+    background: #E0E0E0;
+}
+
+@media (min-width: 900px) {
+    .cover-photo-div  {
+        & .change-photo-toggle {
+            display: flex;
+        }
+        & button {
+            display: initial;
+        }
+    }
+}

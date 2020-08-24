@@ -14,9 +14,12 @@
                 &:hover {
                     background: var(--button-bg);
                 }
+                &:hover svg {
+                    color: var(--gray-dark);
+                }
         }
         & svg {
-            color:var(--gray-dark);
+            color:var(--gray-light);
             width: 100%;
             transition: .5s;
             pointer-events: none;
@@ -36,6 +39,6 @@
 }
 @media (min-width: 768px) {
     .activity-links li {
-        margin: 0 15px;
+        margin: 0 20px;
     }
 }

@@ -52,8 +52,8 @@ a {
       --text: #000000;
       --gray-light: #686D73;
       --gray-dark: #3e4346;
-      --button-bg: #E0E0E0;
-      --input-bg: #ECECEC;
+      --button-bg: #eef2f5;
+      --input-bg: #eef2f5;
       --card-bg: #ffffff;
       --link-blue: #2C82FF; 
       --fb-blue: #4393F4;
@@ -81,6 +81,6 @@ a {
       transition: background .5s;
   }
   header, main {
-      max-width: 950px;
+      max-width: 1100px;
       margin: 0 auto;
   }
